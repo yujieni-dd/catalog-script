@@ -1,5 +1,8 @@
 #!/usr/local/bin/python
-# csv-reader.py: Example of CSV parsing in python
+# sprouts_csv_processor.py: process sprouts catalog csv file to build product metadata
+# Type 'python3 csv-reader.py' in the terminal to run the script
+# Make csv to be processed under the same directory of this python script. 
+# The input and output file names are hardcoded, which can be updated accordingly.
 import csv
 import json
 
