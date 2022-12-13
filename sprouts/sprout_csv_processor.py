@@ -55,8 +55,11 @@ with open(input_file_name, 'r') as inputCsvfile:
     output_rows = []
     for row in reader:
         # parse 'ingredients', 'allergen_info', 'dietary_flags', 'disclaimer' information
-        key_list = ['ingredients', 'allergen_info', 'dietary_flags', 'disclaimer']
-        detail_list = [{'body': row[key], 'header': key} for key in key_list
+        key_map = {'ingredients': 'Ingredients',
+                   'allergen_info': 'Allergens',
+                   'dietary_flags': 'Dietary Flags',
+                   'disclaimer': 'Prop 65'}
+        detail_list = [{'body': row[key], 'header': key_map[key]} for key in key_map.keys()
                        if key in row and row[key] != '']
 
         static_disclaimer_string = "Product details and images are for convenience only and may not be current, " \
